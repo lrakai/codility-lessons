@@ -20,6 +20,7 @@ function solution(A, K) {
             }
         }
     }
+    return -1;
 }
 
 
