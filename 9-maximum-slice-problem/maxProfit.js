@@ -3,9 +3,9 @@ function solution(N) {
     // write your code in JavaScript (Node.js 6.4.0)
     let currS = 0, maxS = 0, currP = N[0];
     for (let i = 1; i < N.length; i++) {
-        currS = Math.max(0, (N[i]-currP));
+        currS = Math.max(0, (N[i] - currP));
         maxS = Math.max(maxS, currS);
-        if(N[i] < currP) {
+        if (N[i] < currP) {
             currP = N[i];
         }
     }

@@ -5,12 +5,12 @@ function solution(N) {
     for (let i = 1; i < N.length; i++) {
         if (N[i] > h[h.length - 1]) {
             h.push(N[i]);
-        } else if(N[i] < h[h.length - 1]) {
+        } else if (N[i] < h[h.length - 1]) {
             while (N[i] < h[h.length - 1] && h.length > 0) {
                 stones++;
                 h.pop();
             }
-            if(N[i] > h[h.length - 1] || h.length === 0) {
+            if (N[i] > h[h.length - 1] || h.length === 0) {
                 h.push(N[i]);
             }
         }

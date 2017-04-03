@@ -1,8 +1,8 @@
 function solution(N) {
     // write your code in JavaScript (Node.js 6.4.0)
     let s = [];
-    for(let c of N) {
-        if(c === '{' || c === '(' || c === '[') {
+    for (let c of N) {
+        if (c === '{' || c === '(' || c === '[') {
             s.push(c);
         } else {
             let last = s.pop();
@@ -17,7 +17,7 @@ function solution(N) {
     return 1;
 }
 
-let tv = [ ")", "{[{()}]}","{(})"];
+let tv = [")", "{[{()}]}", "{(})"];
 for (t of tv) {
     console.log(`input: ${t}, output: ${solution(t)}`)
 }

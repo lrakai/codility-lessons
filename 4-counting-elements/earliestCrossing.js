@@ -1,5 +1,5 @@
-function nextNearest(nearest, spots){
-    while(++nearest < spots.length+1 && spots[nearest-1]);
+function nextNearest(nearest, spots) {
+    while (++nearest < spots.length + 1 && spots[nearest - 1]);
     return nearest;
 }
 
@@ -11,11 +11,11 @@ function solution(A, K) {
     // write your code in JavaScript (Node.js 6.4.0)
     let spots = new Array(K).fill(false);
     let nearest = 1;
-    for (let i=0; i < A.length; i++) {
-        spots[A[i]-1] = true;
-        if(A[i] === nearest) {
+    for (let i = 0; i < A.length; i++) {
+        spots[A[i] - 1] = true;
+        if (A[i] === nearest) {
             nearest = nextNearest(nearest, spots);
-            if(nearest === K+1) {
+            if (nearest === K + 1) {
                 return i;
             }
         }

@@ -1,12 +1,12 @@
 function solution(N) {
     // write your code in JavaScript (Node.js 6.4.0)
-    N.sort((a,b) => a-b);
+    N.sort((a, b) => a - b);
     let length = N.length;
     let pqrs = [[0, 1, 2], [0, 1, length - 1], [0, length - 2, length - 1], [length - 3, length - 2, length - 1]];
     let maxProd = N[pqrs[0][0]] * N[pqrs[0][1]] * N[pqrs[0][2]];
-    for(let i = 1; i < pqrs.length; i++) {
+    for (let i = 1; i < pqrs.length; i++) {
         let prod = N[pqrs[i][0]] * N[pqrs[i][1]] * N[pqrs[i][2]];
-        if(prod > maxProd) {
+        if (prod > maxProd) {
             maxProd = prod;
         }
     }

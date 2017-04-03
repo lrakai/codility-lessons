@@ -1,12 +1,12 @@
 function solution(N) {
     // write your code in JavaScript (Node.js 6.4.0)
-    if(N.length === 0) {
+    if (N.length === 0) {
         return 0;
     }
     N.sort();
     let last = N[0], distinct = 1;
-    for(let i = 0; i < N.length; i++) {
-        if(N[i] != last) {
+    for (let i = 0; i < N.length; i++) {
+        if (N[i] != last) {
             distinct++;
         }
         last = N[i];

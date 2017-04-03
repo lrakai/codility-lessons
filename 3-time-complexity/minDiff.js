@@ -3,7 +3,7 @@ function solution(N) {
     let left = N[0];
     let right = N.reduce((acc, v) => acc + v, 0) - N[0];
     let minDiff = Math.abs(left - right);
-    for (let i = 1; i < N.length-1; i++) {
+    for (let i = 1; i < N.length - 1; i++) {
         left += N[i];
         right -= N[i];
         let diff = Math.abs(left - right);
