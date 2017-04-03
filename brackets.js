@@ -1,11 +1,11 @@
 function solution(N) {
     // write your code in JavaScript (Node.js 6.4.0)
-    var s = [];
-    for(var c of N) {
+    let s = [];
+    for(let c of N) {
         if(c === '{' || c === '(' || c === '[') {
             s.push(c);
         } else {
-            var last = s.pop();
+            let last = s.pop();
             if (last === undefined || last === "{" && c !== "}" || last === "[" && c !== "]" || last === "(" && c !== ")") {
                 return 0;
             }
@@ -17,7 +17,7 @@ function solution(N) {
     return 1;
 }
 
-var tv = [ ")", "{[{()}]}","{(})"];
+let tv = [ ")", "{[{()}]}","{(})"];
 for (t of tv) {
     console.log(`input: ${t}, output: ${solution(t)}`)
 }

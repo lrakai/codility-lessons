@@ -1,15 +1,15 @@
 function calculateCumsums(S) {
-    var A = new Array(S.length+1).fill(0);
-    var C = A.slice(), G = A.slice(), T = A.slice();
-    var cumsums = {
+    let A = new Array(S.length+1).fill(0);
+    let C = A.slice(), G = A.slice(), T = A.slice();
+    let cumsums = {
         A: A, C: C, G: G, T: T
     };
-    for(var i = 0; i < S.length; i++) {
+    for(let i = 0; i < S.length; i++) {
         cumsums.A[i+1] = cumsums.A[i];
         cumsums.C[i+1] = cumsums.C[i];
         cumsums.G[i+1] = cumsums.G[i];
         cumsums.T[i+1] = cumsums.T[i];
-        var c = S[i];
+        let c = S[i];
         cumsums[c][i+1]++;
     }
     return cumsums;
@@ -29,8 +29,8 @@ function solution(S,P,Q) {
         S = S.S;
     }
     // write your code in JavaScript (Node.js 6.4.0)
-    var cumsums = calculateCumsums(S);
-    var qs = new Array(P.length);
+    let cumsums = calculateCumsums(S);
+    let qs = new Array(P.length);
     for(i = 0; i < P.length; i++) {
         qs[i] = query(S, cumsums, P[i], Q[i]);
     }
@@ -38,7 +38,7 @@ function solution(S,P,Q) {
 }
 
 
-var tv = [{S: "AC", P:[0,1,0], Q:[0,1,1]}, {S: "CA", P:[0,1,0], Q:[0,1,1]}, { S: "CAGCCTA", P: [2,5,0], Q: [4,5,6] }, {S: "GGGGGGG", P:[2,5,0], Q:[4,5,6]}, {S: "GGGAGGG", P:[2,5,0], Q:[4,5,6]}];
+let tv = [{S: "AC", P:[0,1,0], Q:[0,1,1]}, {S: "CA", P:[0,1,0], Q:[0,1,1]}, { S: "CAGCCTA", P: [2,5,0], Q: [4,5,6] }, {S: "GGGGGGG", P:[2,5,0], Q:[4,5,6]}, {S: "GGGAGGG", P:[2,5,0], Q:[4,5,6]}];
 for (t of tv) {
     console.log(`input: ${t}, output: ${solution(t)}`)
 }
